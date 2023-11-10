@@ -109,6 +109,11 @@ class PlantDetailFragment : Fragment() {
                     else -> false
                 }
             }
+
+            // 向xml中的ComposeView中添加Compose内容
+            composeView.setContent {
+                PlantDetailDescription(plantDetailViewModel)
+            }
         }
         setHasOptionsMenu(true)
 
