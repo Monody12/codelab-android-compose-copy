@@ -34,6 +34,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.data.Plant
 import com.google.samples.apps.sunflower.databinding.FragmentPlantDetailBinding
+import com.google.samples.apps.sunflower.theme.SunflowerTheme
 import com.google.samples.apps.sunflower.utilities.InjectorUtils
 import com.google.samples.apps.sunflower.viewmodels.PlantDetailViewModel
 
@@ -112,7 +113,9 @@ class PlantDetailFragment : Fragment() {
 
             // 向xml中的ComposeView中添加Compose内容
             composeView.setContent {
-                PlantDetailDescription(plantDetailViewModel)
+                SunflowerTheme {
+                    PlantDetailDescription(plantDetailViewModel)
+                }
             }
         }
         setHasOptionsMenu(true)
